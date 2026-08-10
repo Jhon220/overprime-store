@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link href="img/logo.jpeg" rel="icon" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- =====================================================
+         DATOS BÁSICOS - REEMPLAZAR
+    ====================================================== -->
+
+    <title>OVERPRIME STORE | Tienda Online</title>
+
+    <meta name="description"
+          content="OVERPRIME STORE - Productos seleccionados para bienestar y cuidado personal. Compra fácil y rápido por WhatsApp.">
+
+    <!-- =====================================================
+         ESTILOS
+    ====================================================== -->
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --dark: #111827;
+            --text: #374151;
+            --gray: #6b7280;
+            --light: #f8fafc;
+            --border: #e5e7eb;
+            --white: #ffffff;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: var(--text);
+            background: var(--white);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            width: 100%;
+            display: block;
+        }
+
+        .container {
+            width: 92%;
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        /* =====================================================
+           HEADER
+        ====================================================== */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255,255,255,0.97);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .navbar {
+            height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .logo {
+            font-size: 21px;
+            font-weight: 800;
+            color: var(--dark);
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .menu {
+            display: flex;
+            gap: 28px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .menu a:hover {
+            color: var(--primary);
+        }
+
+        .whatsapp-button {
+            background: #25D366;
+            color: white;
+            padding: 11px 18px;
+            border-radius: 9px;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        /* =====================================================
+           HERO
+        ====================================================== */
+
+        .hero {
+            background: linear-gradient(135deg, #f8fafc, #eef4ff);
+            padding: 90px 0;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1.4fr 0.8fr;
+            align-items: center;
+            gap: 70px;
+        }
+
+        .small-title {
+            color: var(--primary);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        .hero h1 {
+            color: var(--dark);
+            font-size: clamp(42px, 6vw, 68px);
+            line-height: 1.05;
+            letter-spacing: -2px;
+            margin-bottom: 25px;
+        }
+
+        .hero p {
+            color: var(--gray);
+            font-size: 18px;
+            max-width: 650px;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            padding: 13px 21px;
+            border-radius: 9px;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .button-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .button-primary:hover {
+            background: var(--primary-dark);
+        }
+
+        .button-secondary {
+            background: white;
+            border: 1px solid var(--border);
+            color: var(--dark);
+        }
+
+        .hero-box {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.06);
+        }
+
+        .hero-box-icon {
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .hero-box h3 {
+            color: var(--dark);
+            margin-bottom: 10px;
+            font-size: 23px;
+        }
+
+        .hero-box p {
+            font-size: 15px;
+            margin: 0;
+        }
+
+        /* =====================================================
+           SECCIONES
+        ====================================================== */
+
+        section {
+            padding: 85px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            max-width: 650px;
+            margin: 0 auto 45px;
+        }
+
+        .section-title h2 {
+            font-size: 38px;
+            line-height: 1.1;
+            color: var(--dark);
+            margin-bottom: 12px;
+        }
+
+        .section-title p {
+            color: var(--gray);
+        }
+
+        /* =====================================================
+           PRODUCTOS
+        ====================================================== */
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .product {
+            border: 1px solid var(--border);
+            border-radius: 17px;
+            overflow: hidden;
+            background: white;
+            transition: 0.2s;
+        }
+
+        .product:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+        }
+
+        /*
+            REEMPLAZA LAS IMÁGENES:
+
+            producto1.jpg
+            producto2.jpg
+            producto3.jpg
+
+            Colócalas dentro de una carpeta llamada "img".
+        */
+
+        .product-image {
+            height: 260px;
+            object-fit: cover;
+            background: #f1f5f9;
+        }
+
+        .product-info {
+            padding: 24px;
+        }
+
+        .product-category {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 20px;
+            background: #eff6ff;
+            color: var(--primary);
+            font-size: 11px;
+            font-weight: 800;
+        }
+
+        .product h3 {
+            color: var(--dark);
+            font-size: 21px;
+            margin: 12px 0 8px;
+        }
+
+        .product-description {
+            color: var(--gray);
+            font-size: 14px;
+            min-height: 65px;
+        }
+
+        .product-footer {
+            border-top: 1px solid var(--border);
+            margin-top: 15px;
+            padding-top: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .price {
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--dark);
+        }
+
+        .buy {
+            color: var(--primary);
+            font-weight: 800;
+        }
+
+        /* =====================================================
+           SOBRE NOSOTROS
+        ====================================================== */
+
+        .about {
+            background: var(--light);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about h2 {
+            color: var(--dark);
+            font-size: 38px;
+            line-height: 1.1;
+        }
+
+        .about p {
+            color: var(--gray);
+            margin-bottom: 15px;
+        }
+
+        /* =====================================================
+           INFORMACIÓN
+        ====================================================== */
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .info-card {
+            border: 1px solid var(--border);
+            padding: 28px;
+            border-radius: 16px;
+        }
+
+        .info-card h3 {
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+
+        .info-card p {
+            color: var(--gray);
+            font-size: 14px;
+        }
+
+        /* =====================================================
+           CONTACTO
+        ====================================================== */
+
+        .contact {
+            background: var(--dark);
+            color: white;
+        }
+
+        .contact-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .contact h2 {
+            font-size: 38px;
+            line-height: 1.1;
+            margin-bottom: 10px;
+        }
+
+        .contact p {
+            color: #cbd5e1;
+        }
+
+        .contact-button {
+            background: #25D366;
+            color: white;
+            padding: 14px 23px;
+            border-radius: 9px;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        /* =====================================================
+           FOOTER
+        ====================================================== */
+
+        footer {
+            background: #0b1120;
+            color: #cbd5e1;
+            padding: 55px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 40px;
+        }
+
+        .footer-logo {
+            color: white;
+            display: inline-block;
+            margin-bottom: 12px;
+        }
+
+        footer h4 {
+            color: white;
+            margin-bottom: 13px;
+        }
+
+        footer p,
+        footer a {
+            color: #94a3b8;
+            font-size: 13px;
+        }
+
+        footer a {
+            display: block;
+            margin-bottom: 7px;
+        }
+
+        footer a:hover {
+            color: white;
+        }
+
+        .copyright {
+            border-top: 1px solid #1e293b;
+            margin-top: 40px;
+            padding-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: #64748b;
+        }
+
+        /* =====================================================
+           RESPONSIVE
+        ====================================================== */
+
+        @media (max-width: 800px) {
+
+            .menu {
+                display: none;
+            }
+
+            .hero {
+                padding: 65px 0;
+            }
+
+            .hero-content,
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .products,
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .contact-content {
+                display: block;
+            }
+
+            .contact-button {
+                display: inline-block;
+                margin-top: 25px;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .navbar {
+                height: 65px;
+            }
+
+            .navbar .whatsapp-button {
+                padding: 9px 12px;
+                font-size: 12px;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .section-title h2,
+            .about h2,
+            .contact h2 {
+                font-size: 32px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .copyright {
+                display: block;
+            }
+
+            .copyright div {
+                margin-bottom: 5px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<!-- =========================================================
+     HEADER
+========================================================== -->
+
+<header>
+
+    <div class="container navbar">
+
+        <!-- REEMPLAZAR: nombre de la tienda si cambia -->
+        <a href="#" class="logo">
+            OVER<span>PRIME</span> STORE
+        </a>
+
+        <nav class="menu">
+            <a href="#productos">Productos</a>
+            <a href="#nosotros">Nosotros</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+
+        <!-- REEMPLAZAR: número de WhatsApp -->
+        <a
+            href="https://wa.me/573011774256"
+            target="_blank"
+            class="whatsapp-button">
+
+            WhatsApp
+
+        </a>
+
+    </div>
+
+</header>
+
+
+<!-- =========================================================
+     HERO
+========================================================== -->
+
+<section class="hero">
+
+    <div class="container hero-content">
+
+        <div>
+
+            <div class="small-title">
+                OVERPRIME STORE
+            </div>
+
+            <h1>
+                Productos prácticos para tu día a día.
+            </h1>
+
+            <p>
+                Descubre nuestra selección de productos para
+                bienestar y cuidado personal. Compra de forma
+                fácil y rápida directamente por WhatsApp.
+            </p>
+
+            <div class="buttons">
+
+                <a
+                    href="#productos"
+                    class="button button-primary">
+
+                    Ver productos
+
+                </a>
+
+                <!-- REEMPLAZAR: número de WhatsApp -->
+
+                <a
+                    href="https://wa.me/573011774256"
+                    target="_blank"
+                    class="button button-secondary">
+
+                    Comprar por WhatsApp
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-box">
+
+            <div class="hero-box-icon">
+                🛍️
+            </div>
+
+            <h3>
+                Compra fácil y directa
+            </h3>
+
+            <p>
+                Elige tu producto, escríbenos por WhatsApp
+                y recibe atención personalizada para realizar
+                tu pedido.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     PRODUCTOS
+========================================================== -->
+
+<section id="productos">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <div class="small-title">
+                NUESTROS PRODUCTOS
+            </div>
+
+            <h2>
+                Productos destacados
+            </h2>
+
+            <p>
+                Conoce nuestra selección y realiza tu pedido
+                directamente por WhatsApp.
+            </p>
+
+        </div>
+
+
+        <div class="products">
+
+
+            <!-- =================================================
+                 PRODUCTO 1
+            ================================================== -->
+
+            <article class="product">
+
+                <!-- REEMPLAZAR:
+                     img/producto1.jpg
+                -->
+
+                <img
+                    src="img/antirronquidos.png"
+                    alt="Dispositivo antirronquidos"
+                    class="product-image">
+
+
+                <div class="product-info">
+
+                    <span class="product-category">
+                        DESCANSO
+                    </span>
+
+                    <!-- REEMPLAZAR: nombre -->
+
+                    <h3>
+                        Dispositivo Antirronquidos
+                    </h3>
+
+                    <!-- REEMPLAZAR: descripción -->
+
+                    <p class="product-description">
+                        Diseño compacto y práctico pensado
+                        para acompañar tus noches de descanso.
+                    </p>
+
+
+                    <div class="product-footer">
+
+                        <!-- REEMPLAZAR: precio -->
+
+                        <span class="price">
+                            $79.900 COP
+                        </span>
+
+
+                        <!-- REEMPLAZAR: número -->
+
+                        <a
+                            href="https://wa.me/573011774256?text=Hola%2C%20quiero%20informacion%20sobre%20el%20dispositivo%20antirronquidos."
+                            target="_blank"
+                            class="buy">
+
+                            Pedir →
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================================
+                 PRODUCTO 2
+            ================================================== -->
+
+            <article class="product">
+
+                <!-- REEMPLAZAR:
+                     img/producto2.jpg
+                -->
+
+                <img
+                    src="img/medias.png"
+                    alt="Medias de compresión"
+                    class="product-image">
+
+
+                <div class="product-info">
+
+                    <span class="product-category">
+                        BIENESTAR
+                    </span>
+
+                    <!-- REEMPLAZAR: nombre -->
+
+                    <h3>
+                        Medias de Compresión
+                    </h3>
+
+                    <!-- REEMPLAZAR: descripción -->
+
+                    <p class="product-description">
+                        Una opción práctica para acompañar
+                        tus actividades diarias con comodidad.
+                    </p>
+
+
+                    <div class="product-footer">
+
+                        <!-- REEMPLAZAR: precio -->
+
+                        <span class="price">
+                            $79.900 COP
+                        </span>
+
+
+                        <!-- REEMPLAZAR: número -->
+
+                        <a
+                            href="https://wa.me/573011774256?text=Hola%2C%20quiero%20informacion%20sobre%20las%20medias%20de%20compresion."
+                            target="_blank"
+                            class="buy">
+
+                            Pedir →
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================================
+                 PRODUCTO 3
+            ================================================== -->
+
+            <article class="product">
+
+                <!-- REEMPLAZAR:
+                     img/producto3.jpg
+                -->
+
+                <img
+                    src="img/limpiador.png"
+                    alt="Limpiador facial ultrasónico"
+                    class="product-image">
+
+
+                <div class="product-info">
+
+                    <span class="product-category">
+                        CUIDADO PERSONAL
+                    </span>
+
+                    <!-- REEMPLAZAR: nombre -->
+
+                    <h3>
+                        Limpiador Facial Ultrasónico
+                    </h3>
+
+                    <!-- REEMPLAZAR: descripción -->
+
+                    <p class="product-description">
+                        Dispositivo práctico para complementar
+                        tu rutina de limpieza y cuidado facial.
+                    </p>
+
+
+                    <div class="product-footer">
+
+                        <!-- REEMPLAZAR: precio -->
+
+                        <span class="price">
+                            $89.900 COP
+                        </span>
+
+
+                        <!-- REEMPLAZAR: número -->
+
+                        <a
+                            href="https://wa.me/573011774256?text=Hola%2C%20quiero%20informacion%20sobre%20el%20limpiador%20facial."
+                            target="_blank"
+                            class="buy">
+
+                            Pedir →
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     NOSOTROS
+========================================================== -->
+
+<section id="nosotros" class="about">
+
+    <div class="container about-content">
+
+        <div>
+
+            <div class="small-title">
+                SOBRE NOSOTROS
+            </div>
+
+            <h2>
+                Somos OVERPRIME STORE
+            </h2>
+
+        </div>
+
+
+        <div>
+
+            <p>
+                OVERPRIME STORE es una tienda dedicada a ofrecer
+                productos seleccionados para el bienestar,
+                cuidado personal y vida cotidiana.
+            </p>
+
+            <p>
+                Nuestro objetivo es ofrecer una experiencia de
+                compra sencilla, con atención directa y
+                personalizada a través de WhatsApp.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     INFORMACIÓN
+========================================================== -->
+
+<section>
+
+    <div class="container">
+
+        <div class="info-grid">
+
+
+            <div class="info-card">
+
+                <h3>
+                    🚚 Envíos
+                </h3>
+
+                <p>
+                    Realizamos envíos a diferentes ciudades
+                    de Colombia. El costo y tiempo estimado
+                    se confirman antes de realizar el pedido.
+                </p>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <h3>
+                    💬 Atención
+                </h3>
+
+                <p>
+                    Puedes comunicarte con nosotros directamente
+                    por WhatsApp para resolver tus dudas y
+                    realizar pedidos.
+                </p>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <h3>
+                    🔒 Compra transparente
+                </h3>
+
+                <p>
+                    Consulta nuestras políticas de privacidad,
+                    envíos, cambios y devoluciones antes
+                    de realizar una compra.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     CONTACTO
+========================================================== -->
+
+<section id="contacto" class="contact">
+
+    <div class="container contact-content">
+
+        <div>
+
+            <div class="small-title">
+                CONTACTO
+            </div>
+
+            <h2>
+                ¿Tienes alguna pregunta?
+            </h2>
+
+            <p>
+                Escríbenos por WhatsApp y te ayudaremos
+                con tu pedido.
+            </p>
+
+        </div>
+
+
+        <!-- REEMPLAZAR: número -->
+
+        <a
+            href="https://wa.me/573011774256"
+            target="_blank"
+            class="contact-button">
+
+            Hablar por WhatsApp
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================== -->
+
+<footer>
+
+    <div class="container footer-grid">
+
+
+        <!-- INFORMACIÓN DEL NEGOCIO -->
+
+        <div>
+
+            <a href="#" class="logo footer-logo">
+                OVER<span>PRIME</span> STORE
+            </a>
+
+            <p>
+                Tienda online de productos para bienestar
+                y cuidado personal.
+            </p>
+
+        </div>
+
+
+        <!-- DIRECCIÓN -->
+
+        <div>
+
+            <h4>
+                Información
+            </h4>
+
+            <!-- REEMPLAZAR SI CAMBIA -->
+
+            <p>
+                Cl. 51B #35-73<br>
+                Barrio Lucero<br>
+                Barranquilla, Colombia
+            </p>
+
+        </div>
+
+
+        <!-- POLÍTICAS -->
+
+        <div>
+
+            <h4>
+                Políticas
+            </h4>
+
+            <!--
+                IMPORTANTE:
+
+                Crea estos archivos:
+
+                privacidad.html
+                terminos.html
+                envios.html
+                devoluciones.html
+                cookies.html
+            -->
+
+            <a href="privacidad.html">
+                Política de privacidad
+            </a>
+
+            <a href="terminos.html">
+                Términos y condiciones
+            </a>
+
+            <a href="envios.html">
+                Política de envíos
+            </a>
+
+            <a href="devoluciones.html">
+                Cambios y devoluciones
+            </a>
+
+            <a href="cookies.html">
+                Política de cookies
+            </a>
+
+        </div>
+
+
+        <!-- CONTACTO -->
+
+        <div>
+
+            <h4>
+                Contacto
+            </h4>
+
+            <!-- REEMPLAZAR -->
+
+            <a href="https://wa.me/573011774256">
+                WhatsApp
+            </a>
+
+            <!-- REEMPLAZAR -->
+
+            <a href="mailto:overprimestore@gmail.com">
+                overprimestore@gmail.com
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="container copyright">
+
+        <!-- REEMPLAZAR: año si lo necesitas -->
+
+        <span>
+            © 2026 OVERPRIME STORE.
+            Todos los derechos reservados.
+        </span>
+
+        <span>
+            Colombia
+        </span>
+
+    </div>
+
+</footer>
+
+</body>
+</html>
+```
